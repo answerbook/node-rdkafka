@@ -9,8 +9,9 @@
     "build": "node-gyp build",
     "test": "make test",
     "preinstall": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka",
+    "prepare": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka",
     "install": "node-gyp rebuild",
-    "prepack": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka && node ./ci/prepublish.js"
+    "prepack": "node ./ci/prepublish.js"
   },
   "keywords": [
     "kafka",
