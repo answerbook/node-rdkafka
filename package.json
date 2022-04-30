@@ -8,7 +8,7 @@
     "configure": "node-gyp configure",
     "build": "node-gyp build",
     "test": "make test",
-    "install": "node-gyp rebuild",
+    "install": "rm -rf deps/librdkafka && git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka && node-gyp rebuild",
     "prepack": "node ./ci/prepublish.js"
   },
   "keywords": [
