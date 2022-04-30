@@ -1,6 +1,6 @@
 {
   "name": "node-rdkafka",
-  "version": "v2.12.0",
+  "version": "v2.12.0-logdna",
   "description": "Node.js bindings for librdkafka",
   "librdkafka": "1.7.0",
   "main": "lib/index.js",
@@ -9,6 +9,7 @@
     "build": "node-gyp build",
     "test": "make test",
     "test:e2e": "make e2e",
+    "preinstall": "git clone --branch v1.7.0 https://github.com/edenhill/librdkafka deps/librdkafka && rm -rf deps/librdkafka/.git",
     "install": "node-gyp rebuild",
     "prepack": "node ./ci/prepublish.js"
   },
@@ -41,7 +42,8 @@
   },
   "dependencies": {
     "bindings": "^1.3.1",
-    "nan": "^2.14.0"
+    "nan": "^2.14.0",
+    "semver": "^7.3.5"
   },
   "engines": {
     "node": ">=6.0.0"
