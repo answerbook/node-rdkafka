@@ -10,7 +10,7 @@
     "test": "make test",
     "preinstall": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka",
     "install": "node-gyp rebuild",
-    "prepack": "node ./ci/prepublish.js"
+    "prepack": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka && node ./ci/prepublish.js"
   },
   "keywords": [
     "kafka",
