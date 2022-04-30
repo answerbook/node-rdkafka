@@ -8,8 +8,8 @@
     "configure": "node-gyp configure",
     "build": "node-gyp build",
     "test": "make test",
-    "preinstall": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka",
-    "prepare": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka",
+    "preinstall": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka && rm -rf deps/librdkafka/.git",
+    "prepare": "git clone --branch v1.5.3 https://github.com/edenhill/librdkafka deps/librdkafka && rm -rf deps/librdkafka/.git",
     "install": "node-gyp rebuild",
     "prepack": "node ./ci/prepublish.js"
   },
